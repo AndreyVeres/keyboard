@@ -111,3 +111,24 @@ textarea {
   
 }
 
+
+.word span {
+    /* color: black; */
+}
+.normal {
+    color: black;
+} 
+
+.done {
+    color: green;
+}
+
+.wrong {
+    color: red;
+}
+
+.active {
+    transform: scale(1.1);
+    border-bottom: 2px solid ;
+}
+
