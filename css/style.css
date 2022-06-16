@@ -1,0 +1,113 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+  
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.monitor {
+    height: 550px;
+    background-image: url(/images/monitor.png);
+    background-size: 1170px 550px;
+    background-repeat: no-repeat;
+    background-position: top;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.keyboard {
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 4px;
+    display: inline-block;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 1000px;
+    background-color: rgba(82, 8, 8, 0.778);;
+}
+
+.text {
+    font-size: 40px;
+    
+}
+
+.line div {
+   float: left;
+   width: 40px;
+   height: 40px;
+   background-color: #33138f;
+   border-radius: 4px;
+   margin: 3px;
+   padding: 4px;
+   text-transform: uppercase;
+   text-align: center;
+   line-height: 32px;
+   color: #fff;
+   font-size: 0.8em;
+
+}
+
+.line .backspace{
+    width: 85px;
+}
+
+.line .tab {
+    width: 60px;
+}
+
+.line .leftCaps {
+    width: 80px;
+}
+
+.line .rightShift {
+    width: 115px;
+}
+
+.line .leftShift {
+    width: 100px;
+}
+
+.line .width50 {
+    width: 50px;
+}
+
+.line .space {
+    width: 290px;
+}
+
+.line .enter {
+    position: absolute;
+    right: 12px;
+    height: 86px;
+    top: 57px;
+    width: 40px;
+}
+
+.line .enter::after {
+    content: 'enter';
+    position: absolute;
+    width: 60px;
+    height: 40px;
+    border-radius: 4px;
+    /* border: 1px solid; */
+    background-color: #33138f;
+    left: -22px;
+    top: -1px;
+   
+}
+
+textarea {
+  
+}
+
