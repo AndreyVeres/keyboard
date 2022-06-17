@@ -8,7 +8,7 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 10px;
-  
+
 }
 
 .wrapper {
@@ -23,9 +23,11 @@
     background-position: top;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    flex-direction: column;
 }
+
 .keyboard {
     padding: 10px;
     border: 1px solid;
@@ -34,31 +36,32 @@
     margin: 0 auto;
     position: relative;
     margin-bottom: 1000px;
-    background-color: rgba(82, 8, 8, 0.778);;
+    background-color: rgba(82, 8, 8, 0.778);
+    ;
 }
 
 .text {
     font-size: 40px;
-    
+
 }
 
 .line div {
-   float: left;
-   width: 40px;
-   height: 40px;
-   background-color: #33138f;
-   border-radius: 4px;
-   margin: 3px;
-   padding: 4px;
-   text-transform: uppercase;
-   text-align: center;
-   line-height: 32px;
-   color: #fff;
-   font-size: 0.8em;
+    float: left;
+    width: 40px;
+    height: 40px;
+    background-color: #33138f;
+    border-radius: 4px;
+    margin: 3px;
+    padding: 4px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 32px;
+    color: #fff;
+    font-size: 0.8em;
 
 }
 
-.line .backspace{
+.line .backspace {
     width: 85px;
 }
 
@@ -104,31 +107,56 @@
     background-color: #33138f;
     left: -22px;
     top: -1px;
-   
+
 }
 
-textarea {
-  
+textarea {}
+.word {
+    margin-bottom: 30px;
 }
-
 
 .word span {
-    /* color: black; */
+     border-bottom: 2px solid transparent;
 }
+
 .normal {
     color: black;
-} 
+}
+
+.space {
+    width: 15px;
+}
 
 .done {
-    color: green;
+    color: #43f535;
+    font-size: 40px;
 }
 
 .wrong {
     color: red;
+    font-size: 40px;
 }
 
-.active {
-    transform: scale(1.1);
-    border-bottom: 2px solid ;
+.word .active {
+    /* display: inline-block; */
+    border-bottom: 2px solid #43f535;;
+    color: #43f535;
 }
 
+.wordList {
+    width: 700px;
+   
+    height: 100px;
+    margin-top: 85px;
+}
+
+.nextWord {
+    font-size: 40px;
+}
+
+.wordOfList {
+    font-size: 40px;
+}
+/* .active {
+    background-color: gray;
+} */
