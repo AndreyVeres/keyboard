@@ -18,6 +18,9 @@
 
                 <div class="monitor">
                     <div class="wordList">
+                        <div class="word__track">
+                            
+                        </div>
 
                     </div>
                     <div class="monitor__inner">
@@ -26,14 +29,19 @@
                            
                             </div>
                         </div>
-                        <form></form>
-                        <input type="text" name="text" class="inputText">
+                        <div class="inputs">
+                            <div class="timer__window">60</div>
+                            <input type="text" name="text" class="inputText">
+                            <button class="restart__btn"><img src="/images/restart.png" alt=""></button>
+                         
+                        </div>
+                        
                     </div>
 
                 </div>
 
                 <div class="keyboard">
-                    <div class="line">
+                    <div class="line line__red">
                         <div data-key="Backquote">`</div>
                         <div data-key="Digit1">1</div>
                         <div data-key="Digit2">2</div>
@@ -49,7 +57,7 @@
                         <div data-key="Equal">+</div>
                         <div data-key="Backspace" class="backspace">backspace</div>
                     </div>
-                    <div class="line">
+                    <div class="line line__green">
                         <div data-key="Tab" class="tab">tab</div>
                         <div data-key="KeyQ">q</div>
                         <div data-key="KeyW">w</div>
@@ -65,7 +73,7 @@
                         <div data-key="BracketRight">]</div>
                     </div>
 
-                    <div class="line">
+                    <div class="line line__yellow">
                         <div data-key="CapsLock" class="leftCaps">caps</div>
                         <div data-key="KeyA">a</div>
                         <div data-key="KeyS">s</div>
@@ -82,7 +90,7 @@
                         <div data-key="Enter" class="enter"></div>
                     </div>
 
-                    <div class="line">
+                    <div class="line line__blue">
                         <div data-key="ShiftLeft" class="leftShift">shift</div>
                         <div data-key="KeyZ">z</div>
                         <div data-key="KeyX">x</div>
@@ -94,19 +102,17 @@
                         <div data-key="Comma">,</div>
                         <div data-key="Period">.</div>
                         <div data-key="Slash">/</div>
-                        <div data-key="ShiftRight" class="rightShift">rshift</div>
+                        <div data-key="ShiftRight" class="rightShift">shift</div>
                     </div>
-                    <div class="line">
+                    <div class="line line__purple">
                         <div data-key="ControlLeft" class="width50">ctrl</div>
                         <div data-key="win" class="width50">win</div>
-
-
                         <div data-key="AltLeft" class="width50">alt</div>
                         <div data-key="Space" class="space">space</div>
-                        <div data-key="AltRight" class="width50">ralt</div>
+                        <div data-key="AltRight" class="width50">alt</div>
                         <div data-key="fn" class="width50">fn</div>
                         <div data-key="*" class="width50">*</div>
-                        <div data-key="ControlRight" class="width50">rctrl</div>
+                        <div data-key="ControlRight" class="width50">ctrl</div>
 
                     </div>
                 </div>
@@ -116,7 +122,7 @@
         </div>
     </main>
 
-    <script src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 
 </html>
