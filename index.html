@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,38 +7,35 @@
     <link rel="stylesheet" href="css/style.css">
     <title>keyboard training</title>
 </head>
-
 <body>
+    <div class="result__popup">
+        <div class="popup__box">
+            <h2 class="popup__title">
+                Ваш результат
+            </h2>
+            <div class="result__place">2</div>
+            <div class="result__text">Слов в минуту</div>
+            <button class="popup__result-btn">Продолжить</button>
+        </div>
+    </div>
     <main class="main">
         <div class="container">
-            
             <div class="wrapper">
-                <!-- <h1 class="title">Keyboard practice</h1> -->
-
                 <div class="monitor">
                     <div class="wordList">
-                        <div class="word__track">
-                            
-                        </div>
-
+                        <div class="word__track"></div>
                     </div>
                     <div class="monitor__inner">
                         <div class="text">
-                            <div class="word">
-                           
-                            </div>
+                            <div class="word"></div>
                         </div>
                         <div class="inputs">
                             <div class="timer__window">60</div>
                             <input type="text" name="text" class="inputText">
-                            <button class="restart__btn"><img src="/images/restart.png" alt=""></button>
-                         
+                            <button class="restart__btn"><img src="./images/restart.png" alt="refresh"></button>
                         </div>
-                        
                     </div>
-
                 </div>
-
                 <div class="keyboard">
                     <div class="line line__red">
                         <div data-key="Backquote">`</div>
@@ -72,7 +68,6 @@
                         <div data-key="BracketLeft">[</div>
                         <div data-key="BracketRight">]</div>
                     </div>
-
                     <div class="line line__yellow">
                         <div data-key="CapsLock" class="leftCaps">caps</div>
                         <div data-key="KeyA">a</div>
@@ -89,7 +84,6 @@
                         <div data-key="Backslash">\</div>
                         <div data-key="Enter" class="enter"></div>
                     </div>
-
                     <div class="line line__blue">
                         <div data-key="ShiftLeft" class="leftShift">shift</div>
                         <div data-key="KeyZ">z</div>
@@ -113,16 +107,11 @@
                         <div data-key="fn" class="width50">fn</div>
                         <div data-key="*" class="width50">*</div>
                         <div data-key="ControlRight" class="width50">ctrl</div>
-
                     </div>
                 </div>
             </div>
-
-
         </div>
     </main>
-
     <script type="module" src="js/main.js"></script>
 </body>
-
 </html>

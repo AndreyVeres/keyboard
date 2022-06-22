@@ -7,15 +7,15 @@ const generateWordList = () => {
             if (rawFile.readyState === 4) {
                 if (rawFile.status === 200 || rawFile.status == 0) {
                     allText = rawFile.responseText.split('\r\n');
-
                 }
             }
         };
         rawFile.send(null);
     }
     readTextFile('../engwords.txt');
-
-    return allText.splice(0 , 100);
+    function makeRandomArr(a, b) {
+        return Math.random() - 0.5;
+    }
+    return allText.sort(makeRandomArr).splice(0,150);
 };
-
 export default generateWordList;

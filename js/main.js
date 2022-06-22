@@ -1,13 +1,13 @@
 import rgbKeyboard from '../js/modules/rgbkeyboard.js';
 import generateWordList from '../js/modules/generateWordList.js';
-rgbKeyboard();
+
 let wordsList = generateWordList();
 let started = false;
 let doneCounter = 0;
-
+const popup = document.querySelector('.result__popup ');
+const btn = document.querySelector('.popup__result-btn');
 const input = document.querySelector('.inputText');
-input.addEventListener('input', startGame);
-renderList(wordsList)
+
 
 function startGame() {
     if (!started) {
@@ -22,13 +22,13 @@ function startGame() {
             clearInterval(updateTimer);
             started = false;
             time.textContent = '60';
-        }, 60000)
+            showResult();
+            input.blur();
+        }, 3000);
     }
     getWord();
 }
-
 function renderList(list) {
-    list.sort(makeRandomArr);
     for (let i = 0; i < list.length; i++) {
         const word = document.createElement('span');
         word.classList.add('wordOfList');
@@ -37,12 +37,10 @@ function renderList(list) {
     }
     input.focus();
 }
-
 function getWord() {
     const word = document.querySelector('.wordOfList');
     checkWord(word);
 }
-
 function checkWord(word) {
     const value = input.value;
     if (word.textContent === value) {
@@ -51,7 +49,7 @@ function checkWord(word) {
     }
     if (word.textContent !== value && value.length > word.textContent.length ||      //Поправить
         (value.includes(' ') && value.length !== word.textContent.length)) {
-        setResult(word, 'wrong');
+         setResult(word, 'wrong');
     }
     let wordDistanceToTop = word.getBoundingClientRect().top;
     let viewWindowToTop = document.querySelector('.wordList').getBoundingClientRect().top + 2;
@@ -59,27 +57,24 @@ function checkWord(word) {
         moveTrack();
     }
 }
-
 function setResult(word, result) {
     input.value = '';
     word.classList.add(result);
     word.classList.remove('wordOfList');
 }
-
-function makeRandomArr(a, b) {
-    return Math.random() - 0.5;
-}
-
 function moveTrack() {
     const track = document.querySelector('.word__track');
     track.style.transform += "translateY(-50px)";
 }
+function showResult(){
+    document.querySelector('.result__place').textContent = doneCounter;
+    popup.style.display = 'block';
+}
 
-
-
-
-
-
+btn.addEventListener('click' , startGame);
+input.addEventListener('input', startGame);
+rgbKeyboard();
+renderList(wordsList);
 
 
 

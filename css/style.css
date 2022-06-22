@@ -3,6 +3,50 @@
 ::before {
     box-sizing: border-box;
 }
+.popup__title {
+    margin: 0;
+}
+
+.result__place {
+    font-size: 2em;
+    color: green;
+}
+
+.popup__result-btn {
+    display: inline-block;
+    height: 40px;
+    cursor: pointer;
+    width: 120px;
+    margin: 0 auto;
+    border-radius: 8px;
+    background-color: green;
+    box-shadow: 3px 3px 10px black;
+    font-weight: 600;
+    letter-spacing: 2px;
+    
+}
+
+.result__popup {
+    position: fixed;
+    right: 0;
+    z-index: 5;
+    left: calc(50% - 250px);
+    top: 20%;
+    border-radius: 12px;
+    bottom: 0;
+    width: 500px;
+    height: 300px;
+    color: #fff;
+    box-shadow: 2px 2px 23px red;
+    background-color: #33138f;
+    display: none;
+}
+
+.popup__box {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
 
 
 body {
@@ -22,7 +66,7 @@ body {
 
 .monitor {
     height: 550px;
-    background-image: url(/images/monitor.png);
+    background-image: url(../images/monitor.png);
     background-size: 1170px 550px;
     background-repeat: no-repeat;
     background-position: top;
@@ -43,7 +87,6 @@ body {
     display: inline-block;
     margin: 0 auto;
     position: relative;
-    margin-bottom: 1000px;
     background-color: rgba(0, 0, 0, 0.875);
 
 }
