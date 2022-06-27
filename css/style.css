@@ -16,14 +16,14 @@
     display: inline-block;
     height: 40px;
     cursor: pointer;
-    width: 120px;
+    width: 250px;
     margin: 0 auto;
     border-radius: 8px;
-    background-color: green;
+    background-color: rgb(8, 209, 8);
     box-shadow: 3px 3px 10px black;
     font-weight: 600;
-    letter-spacing: 2px;
-    
+    letter-spacing: 2px;  
+    outline: transparent solid thick;  
 }
 
 .result__popup {
@@ -51,6 +51,7 @@
 
 body {
     font-size: 40px;
+    background-color: #4b4a6e;
 }
 
 .container {
@@ -66,12 +67,13 @@ body {
 
 .monitor {
     height: 550px;
-    background-image: url(../images/monitor.png);
+    /* background-image: url(../images/monitor.png); */
     background-size: 1170px 550px;
     background-repeat: no-repeat;
     background-position: top;
     width: 100%;
     display: flex;
+    color: #fff;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
@@ -199,9 +201,17 @@ body {
 
 .wordList {
     width: 700px;
-    height: 100px;
+    height: 84px;
     margin-top: 85px;
     overflow: hidden;
+    border-radius: 12px;
+
+}
+
+.wordList span {
+    display: inline-block   ;
+    margin-right: 10px;
+    font-size: 42px;
 }
 
 
@@ -241,7 +251,9 @@ input {
     text-align: center;
     line-height: 40px;
     height: 40px;
-    background-color: blue;
+    background-color: #d9cccc;
+    font-weight: 600;
+    color: black;
     margin-bottom: 10px;
     border-radius: 4px;
 }

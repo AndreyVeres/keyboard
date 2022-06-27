@@ -10,6 +10,7 @@ const input = document.querySelector('.inputText');
 
 
 function startGame() {
+    
     if (!started) {
         let time = document.querySelector('.timer__window');
         started = true;
@@ -18,13 +19,12 @@ function startGame() {
         }, 1000);
 
         let timer = setTimeout(() => {
-            console.log(`Ваш результат ${doneCounter} слов в минуту`);
             clearInterval(updateTimer);
             started = false;
             time.textContent = '60';
             showResult();
             input.blur();
-        }, 3000);
+        }, 60000);
     }
     getWord();
 }
@@ -49,7 +49,7 @@ function checkWord(word) {
     }
     if (word.textContent !== value && value.length > word.textContent.length ||      //Поправить
         (value.includes(' ') && value.length !== word.textContent.length)) {
-         setResult(word, 'wrong');
+        setResult(word, 'wrong');
     }
     let wordDistanceToTop = word.getBoundingClientRect().top;
     let viewWindowToTop = document.querySelector('.wordList').getBoundingClientRect().top + 2;
@@ -58,25 +58,34 @@ function checkWord(word) {
     }
 }
 function setResult(word, result) {
+    let colorKeyboard = document.querySelector('.keyboard');
     input.value = '';
+    
     word.classList.add(result);
     word.classList.remove('wordOfList');
+
 }
 function moveTrack() {
+  
     const track = document.querySelector('.word__track');
-    track.style.transform += "translateY(-50px)";
+    track.style.transform += "translateY(-42px)";
+    
 }
-function showResult(){
+function showResult() {
     document.querySelector('.result__place').textContent = doneCounter;
     popup.style.display = 'block';
+    btn.focus();
 }
 
-btn.addEventListener('click' , startGame);
+btn.addEventListener('keypress', function(e) {
+    if(e.key === 'Enter'){
+        location.reload();
+    }
+    
+});
 input.addEventListener('input', startGame);
 rgbKeyboard();
 renderList(wordsList);
-
-
 
 
 

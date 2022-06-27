@@ -19,3 +19,5 @@ const generateWordList = () => {
     return allText.sort(makeRandomArr).splice(0,150);
 };
 export default generateWordList;
+
+
