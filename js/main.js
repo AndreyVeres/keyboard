@@ -90,3 +90,28 @@ renderList(wordsList);
 
 
 
+let arr = [1,2,3,4,5,6,7,8,9,10];
+
+function getNum (arr , num){
+    let startIndex = 0;
+    let endIndex = arr.length-1;
+
+    while(startIndex <= endIndex){
+        let middleIndex = Math.floor((endIndex - startIndex) / 2);
+        console.log(middleIndex);
+
+        if(middleIndex === num){
+         
+            return middleIndex;
+        }
+
+        if(middleIndex < num) {
+            startIndex = middleIndex + 1;
+        }
+        else{
+            endIndex = middleIndex - 1
+        }
+    }
+}
+
+getNum(arr , 2);
