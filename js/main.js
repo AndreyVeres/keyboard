@@ -1,14 +1,18 @@
 import rgbKeyboard from '../js/modules/rgbkeyboard.js';
 import generateWordList from '../js/modules/generateWordList.js';
-
+rgbKeyboard();
 let wordsList = generateWordList();
 let started = false;
 let doneCounter = 0;
-const popup = document.querySelector('.result__popup ');
+const popup = document.querySelector('.result__popup');
 const btn = document.querySelector('.popup__result-btn');
 const input = document.querySelector('.inputText');
-
-
+btn.addEventListener('click' , function(){
+    location.reload();
+});
+input.addEventListener('input', startGame);
+renderList(wordsList);
+let distanseToTop = document.querySelector('.wordOfList').getBoundingClientRect().top;
 function startGame() {
     
     if (!started) {
@@ -51,9 +55,11 @@ function checkWord(word) {
         (value.includes(' ') && value.length !== word.textContent.length)) {
         setResult(word, 'wrong');
     }
-    let wordDistanceToTop = word.getBoundingClientRect().top;
-    let viewWindowToTop = document.querySelector('.wordList').getBoundingClientRect().top + 2;
-    if (wordDistanceToTop > viewWindowToTop) {
+    const wordDistanceToTop = word.getBoundingClientRect().top;
+   
+    console.log(wordDistanceToTop , distanseToTop)
+    if (wordDistanceToTop > distanseToTop) {
+        distanseToTop = wordDistanceToTop;
         moveTrack();
     }
 }
@@ -81,37 +87,9 @@ btn.addEventListener('keypress', function(e) {
     if(e.key === 'Enter'){
         location.reload();
     }
-    
 });
-input.addEventListener('input', startGame);
-rgbKeyboard();
-renderList(wordsList);
 
 
 
 
-let arr = [1,2,3,4,5,6,7,8,9,10];
 
-function getNum (arr , num){
-    let startIndex = 0;
-    let endIndex = arr.length-1;
-
-    while(startIndex <= endIndex){
-        let middleIndex = Math.floor((endIndex - startIndex) / 2);
-        console.log(middleIndex);
-
-        if(middleIndex === num){
-         
-            return middleIndex;
-        }
-
-        if(middleIndex < num) {
-            startIndex = middleIndex + 1;
-        }
-        else{
-            endIndex = middleIndex - 1
-        }
-    }
-}
-
-getNum(arr , 2);
