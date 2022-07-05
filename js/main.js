@@ -59,8 +59,8 @@ function checkWord(word) {
    
    
     if (wordDistanceToTop > distanseToTop) {
-        // distanseToTop = wordDistanceToTop;
-        // wordDistanceToTop = distanseToTop;           //Версия для портфолио iframe
+         distanseToTop = wordDistanceToTop;
+         wordDistanceToTop = distanseToTop;           //Версия для портфолио iframe
         moveTrack();
     
     }
