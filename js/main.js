@@ -51,16 +51,18 @@ function checkWord(word) {
         setResult(word, 'done');
         doneCounter++;
     }
-    if (word.textContent !== value && value.length > word.textContent.length ||      //Поправить
+    if (word.textContent !== value && value.length > word.textContent.length ||    
         (value.includes(' ') && value.length !== word.textContent.length)) {
         setResult(word, 'wrong');
     }
-    const wordDistanceToTop = word.getBoundingClientRect().top;
+    let wordDistanceToTop = word.getBoundingClientRect().top;
    
-    console.log(wordDistanceToTop , distanseToTop)
+   
     if (wordDistanceToTop > distanseToTop) {
-        distanseToTop = wordDistanceToTop;
+        // distanseToTop = wordDistanceToTop;
+        // wordDistanceToTop = distanseToTop;           //Версия для портфолио iframe
         moveTrack();
+    
     }
 }
 function setResult(word, result) {

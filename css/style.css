@@ -13,21 +13,26 @@
 
 .result__place {
     font-size: 2em;
-    color: green;
+    color: #fff;
 }
 
 .popup__result-btn {
     display: inline-block;
-    height: 40px;
+    padding: 5px 15px;
     cursor: pointer;
-    width: 250px;
+   
     margin: 0 auto;
     border-radius: 8px;
-    background-color: rgb(8, 209, 8);
-    box-shadow: 3px 3px 10px black;
-    font-weight: 600;
-    letter-spacing: 2px;  
+    background-color: black;
+    box-shadow: 3px 3px 10px red;
+    color: #fff;
+    transition: all .3s;
+    
     outline: transparent solid thick;  
+}
+
+.popup__result-btn:hover {
+    transform: scale(1.1);
 }
 
 .result__popup {
@@ -42,7 +47,7 @@
     height: 300px;
     color: #fff;
     box-shadow: 2px 2px 23px red;
-    background-color: #33138f;
+    background-color: black;
     display: none;
 }
 
@@ -55,7 +60,7 @@
 
 body {
     font-size: 40px;
-    background-color: #4b4a6e;
+    background-color: #000000;
 }
 
 .container {
@@ -70,7 +75,7 @@ body {
 }
 
 .monitor {
-    height: 550px;
+    height: 260px;
     /* background-image: url(../images/monitor.png); */
     background-size: 1170px 550px;
     background-repeat: no-repeat;
@@ -206,7 +211,7 @@ body {
 .wordList {
     width: 1200px;
     height: 84px;
-    margin-top: 85px;
+  
     overflow: hidden;
     border-radius: 12px;
 
