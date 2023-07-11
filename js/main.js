@@ -2,6 +2,7 @@ import rgbKeyboard from '../js/modules/rgbkeyboard.js';
 import generateWordList from '../js/modules/generateWordList.js';
 rgbKeyboard();
 let wordsList = generateWordList();
+console.log(wordsList)
 let started = false;
 let doneCounter = 0;
 const popup = document.querySelector('.result__popup');
@@ -14,7 +15,7 @@ input.addEventListener('input', startGame);
 renderList(wordsList);
 let distanseToTop = document.querySelector('.wordOfList').getBoundingClientRect().top;
 function startGame() {
-    
+
     if (!started) {
         let time = document.querySelector('.timer__window');
         started = true;
@@ -51,33 +52,33 @@ function checkWord(word) {
         setResult(word, 'done');
         doneCounter++;
     }
-    if (word.textContent !== value && value.length > word.textContent.length ||    
+    if (word.textContent !== value && value.length > word.textContent.length ||
         (value.includes(' ') && value.length !== word.textContent.length)) {
         setResult(word, 'wrong');
     }
     let wordDistanceToTop = word.getBoundingClientRect().top;
-   
-   
+
+
     if (wordDistanceToTop > distanseToTop) {
         // distanseToTop = wordDistanceToTop;
       //   wordDistanceToTop = distanseToTop;           //Версия для портфолио iframe
         moveTrack();
-    
+
     }
 }
 function setResult(word, result) {
     let colorKeyboard = document.querySelector('.keyboard');
     input.value = '';
-    
+
     word.classList.add(result);
     word.classList.remove('wordOfList');
 
 }
 function moveTrack() {
-  
+
     const track = document.querySelector('.word__track');
     track.style.transform += "translateY(-42px)";
-    
+
 }
 function showResult() {
     document.querySelector('.result__place').textContent = doneCounter;
@@ -90,8 +91,3 @@ btn.addEventListener('keypress', function(e) {
         location.reload();
     }
 });
-
-
-
-
-
